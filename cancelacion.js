@@ -13,6 +13,7 @@
             document.querySelector('.back-btn').style.display = 'none';
         }
 const openLetterBtn = document.getElementById('open-letter-btn');
+const openLetterBtn1 = document.getElementById('open-letter-btn-desktop');
 const closeBtn = document.getElementById('close-btn');
 const letterModal = document.getElementById('letter-modal');
 
@@ -20,6 +21,10 @@ const letterModal = document.getElementById('letter-modal');
 openLetterBtn.addEventListener('click', () => {
   document.querySelector('.letter-modal').style.display = 'none';
 });
+openLetterBtn1.addEventListener('click', () => {
+  document.querySelector('.letter-modal').style.display = 'none';
+});
+
 
 
 letterModal.addEventListener('click', (e) => {
