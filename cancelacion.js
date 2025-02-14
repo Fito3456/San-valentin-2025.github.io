@@ -19,10 +19,10 @@ const letterModal = document.getElementById('letter-modal');
 
 // Agregar evento de clic al botón de abrir carta
 openLetterBtn.addEventListener('click', () => {
-  document.querySelector('.letter-modal').style.display = 'none';
+  document.querySelector('#letter-modal').style.display = 'none';
 });
 openLetterBtn1.addEventListener('click', () => {
-  document.querySelector('.letter-modal').style.display = 'none';
+  document.querySelector('#letter-modal').style.display = 'none';
 });
 
 
@@ -30,6 +30,6 @@ openLetterBtn1.addEventListener('click', () => {
 letterModal.addEventListener('click', (e) => {
   if (e.target.id === 'close-btn') {
     letterModal.style.display = 'none';
-    document.querySelector('.letter-modal').style.display = 'block';
+    document.querySelector('#letter-modal').style.display = 'block';
   }
 });
