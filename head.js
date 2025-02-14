@@ -2,8 +2,8 @@
 $(document).ready(function() {
     $("#open-letter-btn, #open-letter-btn-desktop").click(function() {
         $.ajax({
-            type: "GET",
-            url: "carta.aspx",
+            type: "POST",
+            url: "Carta.aspx",
             success: function(data) {
                 $("#letter-modal").html(data);
                 $("#letter-modal").show();
