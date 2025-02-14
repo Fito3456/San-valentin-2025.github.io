@@ -1,0 +1,639 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://i.pinimg.com/originals/5b/93/5c/5b935cddfc7b95a903c22f2c97bde7fa.gif');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-clip: padding-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+} 
+h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    background: #007bff;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Media Query para móviles */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 8px;
+    }
+}
+
+
+/* Estilos del selector de versión */
+.version-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones de versión mejorados */
+.version-btn {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mobile-btn {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.8), rgba(255, 142, 142, 0.8));
+}
+
+.desktop-btn {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.8), rgba(94, 159, 239, 0.8));
+}
+
+.version-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+}
+
+
+.version-container {
+    display: none;
+}
+
+.version-container.active {
+    display: block;
+}
+
+.back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .mobile-version .button-90 {
+        width: 90%;
+        height: 200px;
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .mobile-version #e1 {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .mobile-version .modal .letter-content {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 769px) {
+    .desktop-version .button-90 {
+        width: 600px;
+        height: 350px;
+        padding: 50px 100px;
+        font-size: 36px;
+    }
+
+    .desktop-version #e1 {
+        width: 80%;
+        max-width: 800px;
+    }
+}
+
+.e1 {
+    margin: 40px auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 247, 230, 0.95));
+    border-radius: 15px;
+    border: 3px solid transparent;
+    padding: 2px;
+    width: 90%;
+    height: auto;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        inset 0 0 20px rgba(255, 214, 170, 0.2);
+    position: relative;
+    overflow: hidden;
+    animation: borderGlow 4s ease-in-out infinite;
+}
+
+.e1::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #FF4E00, #FF8C00, 
+        #FFD700, #FF6B6B, 
+        #FF4E00);
+    background-size: 400%;
+    z-index: -1;
+    border-radius: 16px;
+    animation: borderAnimate 12s linear infinite;
+    filter: blur(10px);
+    opacity: 0.7;
+}
+
+.p1 {
+    position: relative;
+    color: #4a4a4a;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    padding: 15px 25px;
+    line-height: 1.6;
+    text-align: center;
+    background: linear-gradient(45deg, #333, #666);
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+.p1::before {
+    content: '❝';
+    position: absolute;
+    left: 5px;
+    top: -5px;
+    font-size: 24px;
+    color: rgba(255, 126, 0, 0.6);
+}
+
+.p1::after {
+    content: '❞';
+    position: absolute;
+    right: 5px;
+    bottom: -5px;
+    font-size: 24px;
+    color: rgba(255, 126, 0, 0.6);
+}
+
+@keyframes borderAnimate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400% 0;
+    }
+}
+
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+                    inset 0 0 20px rgba(255, 214, 170, 0.2);
+    }
+    50% {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15),
+                    inset 0 0 30px rgba(255, 214, 170, 0.3);
+    }
+    100% {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+                    inset 0 0 20px rgba(255, 214, 170, 0.2);
+    }
+}
+
+/* Efecto hover para el contenedor */
+.e1:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.15),
+        inset 0 0 30px rgba(255, 214, 170, 0.3);
+}
+
+/* Efecto hover para el texto */
+.e1:hover #p1 {
+    color: #333;
+    letter-spacing: 0.3px;
+}
+  #carta {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #letter-message {
+    font-size: 18px;
+    color: #666;
+  }
+  .button-90 {
+    background: linear-gradient(145deg, #fff7e6, #ffe6cc);
+    border: 1px solid rgba(255, 230, 204, 0.5);
+    border-radius: 8px;
+    padding: 50px 100px;
+    font-size: 36px;
+    cursor: pointer;
+    width: 600px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 45px;
+    transform: rotate(5deg);
+    z-index: 1;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    left: 327px;
+    top: -36px;
+}
+
+/* Eliminamos la animación shine y su keyframe correspondiente */
+
+/* Mantenemos el resto de los efectos que no son intrusivos */
+.button-90:hover {
+    transform: rotate(5deg) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.button-90::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    border: 1px solid #ffe6cc;
+    background: linear-gradient(145deg, #ffeedd, #ffdfbf);
+    border-radius: 8px;
+    transform: rotate(5deg);
+    z-index: -1;
+    animation: pulseCard 2s infinite ease-in-out; /* Animación de pulso */
+}
+
+.button-90::after {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    width: 0;
+    height: 10px;
+    border-style: solid;
+    border-width: 300px 299px 0 300px;
+    border-color: transparent rgba(49, 49, 49, 0.4) transparent rgba(49, 49, 49, 0.2);
+    filter: blur(3px); /* Efecto de desenfoque para la sombra */
+}
+
+/* Decoración adicional */
+.button-90::before {
+    content: "❤";
+    font-size: 24px;
+    color: rgba(255, 100, 100, 0.2);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Animación de pulso */
+@keyframes pulseCard {
+    0% {
+        transform: rotate(5deg) scale(1);
+    }
+    50% {
+        transform: rotate(5deg) scale(1.02);
+    }
+    100% {
+        transform: rotate(5deg) scale(1);
+    }
+}
+
+/* Efecto de brillo */
+.button-90::after {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 0%;
+    height: 10%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+}
+
+
+/* Bordes decorativos */
+.letter-corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(255, 230, 204, 0.5);
+}
+
+.corner-top-left {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner-top-right {
+    top: 10px;
+    right: 10px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner-bottom-left {
+    bottom: 10px;
+    left: 10px;
+    border-right: none;
+    border-top: none;
+}
+
+.corner-bottom-right {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal .letter-content {
+    width: 80%;
+    margin: 40px auto;
+    padding: 25px;
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        inset 0 0 20px rgba(255, 214, 170, 0.1);
+    position: relative;
+    animation: slideIn 0.4s ease;
+}
+
+.modal .letter-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal .letter-content .close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: rotate(90deg);
+}
+
+.modal .letter-content .letter-header {
+    background: linear-gradient(to right, #f8f8f8, #f2f2f2);
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.modal .letter-content .letter-header .letter-info {
+    font-size: 18px;
+    color: #444;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.modal .letter-content .letter-body {
+    padding: 25px;
+    line-height: 1.6;
+    background: rgba(255, 230, 204, 0.5);
+    border-radius: 8px;
+    margin: 10px 0;
+    border: 2px solid rgba(255, 230, 204, 0.5);
+}
+
+.modal .letter-content .letter-body p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.modal .letter-content .letter-footer {
+    background: linear-gradient(to right, #f2f2f2, #f8f8f8);
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    text-align: right;
+}
+
+.modal .letter-content .letter-footer p {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Decoraciones adicionales */
+.modal .letter-content::before {
+    content: '❤';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 20px;
+    color: rgba(255, 99, 71, 0.5);
+}
+
+.modal .letter-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        rgba(255, 99, 71, 0.3), 
+        rgba(255, 165, 0, 0.3), 
+        rgba(255, 99, 71, 0.3));
+    border-radius: 0 0 10px 10px;
+}
+
+@media (max-width: 600px) {
+    .button-90 {
+        padding: 20px 40px;
+        font-size: 24px;
+        width: 100%;
+        height: 191px;
+        margin-top: 20px;
+        top: 29px;
+        left: 7px;
+    }
+
+    .button-90::before {
+        font-size: 32px; /* Reducir el tamaño del corazón */
+        top: 10px; /* Ajustar la posición del corazón */
+        right: 10px; /* Ajustar la posición del corazón */
+    }
+    .button-90::after {
+        height: 5%; 
+        border-width: 176px 241px 0 300px;
+        border-color: transparent rgba(49, 49, 49, 0.4) transparent rgba(49, 49, 49, 0.2);
+        filter: blur(3px); /* Hacer la sombra más pequeña en pantallas pequeñas */
+    }
+    
+
+    
+    .modal .letter-content {
+        width: 90%; /* Hacer que el modal ocupe el 90% del ancho */
+        padding: 15px; /* Reducir el padding del contenido del modal */
+    }
+
+    .modal .letter-content .close {
+        font-size: 20px;
+        width: 25px;
+        height: 25px;
+        top: -1px;
+        left: 514px;
+    }
+
+    .modal .letter-content .letter-header {
+        padding: 10px; 
+    }
+
+    .modal .letter-content .letter-body {
+        padding: 15px; /* Reducir el padding del cuerpo */
+    }
+
+    .modal .letter-content .letter-footer {
+        padding: 10px; /* Reducir el padding del pie */
+    }
+
+    .modal .letter-content .letter-body p {
+        font-size: 12px; /* Reducir el tamaño de la fuente del cuerpo */
+    }
+
+    .modal .letter-content .letter-footer p {
+        font-size: 14px; /* Reducir el tamaño de la fuente del pie */
+    }
+}
+  @keyframes rotateBorder {
+    0% {
+      border-image: radial-gradient(circle, #FF4E00, #FF8C00, #FFD700, #FF6B6B, #FF4E00) 1;
+    }
+    20% {
+      border-image: radial-gradient(circle, #FF6B6B, #FF4E00, #FF8C00, #FFD700, #FF6B6B) 1;
+    }
+    40% {
+      border-image: radial-gradient(circle, #FFD700, #FF6B6B, #FF4E00, #FF8C00, #FFD700) 1;
+    }
+    60% {
+      border-image: radial-gradient(circle, #FF8C00, #FFD700, #FF6B6B, #FF4E00, #FF8C00) 1;
+    }
+    80% {
+      border-image: radial-gradient(circle, #FF4E00, #FF8C00, #FFD700, #FF6B6B, #FF4E00) 1;
+    }
+    100% {
+      border-image: radial-gradient(circle, #FF6B6B, #FF4E00, #FF8C00, #FFD700, #FF6B6B) 1;
+    }
+  }

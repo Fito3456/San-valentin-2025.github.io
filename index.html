@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="limbs.css">
+    <title>San Valentín</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Selector de versión -->
+        <section class="version-selector" id="version-selector">
+            <h2>Elige tu versión preferida</h2>
+            <button class="version-btn mobile-btn" onclick="selectVersion('mobile')">
+                📱 Versión Móvil
+            </button>
+            <button class="version-btn desktop-btn" onclick="selectVersion('desktop')">
+                💻 Versión Desktop
+            </button>
+        </section>
+
+        <!-- Sección Móvil -->
+        <section class="content-section mobile-section" id="mobile-version" style="display: none;">
+            <div class="e1">
+                <p class="p1">Holi quiero que lean esta carta pero en este caso quiero que lo tomes que lo que esta leyendo es para ti ya que lo escribi con esa intencion asi que espero lo aprecie.</p>
+            </div>
+            <div class="letter-container">
+                <button class="button-90" id="open-letter-btn">
+                    <div class="letter-corner corner-top-left"></div>
+                    <div class="letter-corner corner-top-right"></div>
+                    <div class="letter-corner corner-bottom-left"></div>
+                    <div class="letter-corner corner-bottom-right"></div>
+                    <span class="letter-icon"></span>
+                </button>
+            </div>
+      
+        </section>
+
+        <section class="content-section desktop-section" id="desktop-version" style="display: none;">
+            <div class="e1">
+                <p class="p1">Holi quiero que lean esta carta pero en este caso quiero que lo tomes que lo que esta leyendo es para ti ya que lo escribi con esa intencion asi que espero lo aprecie.</p>
+            </div>
+            <div class="letter-container">
+                <button class="button-90" id="open-letter-btn-desktop">
+                    <div class="letter-corner corner-top-left"></div>
+                    <div class="letter-corner corner-top-right"></div>
+                    <div class="letter-corner corner-bottom-left"></div>
+                    <div class="letter-corner corner-bottom-right"></div>
+                    <span class="letter-icon"></span>
+                </button>
+            </div>
+               
+        </section>
+        <div id="letter-modal" class="modal"></div>
+        <!-- Botón de retorno -->
+        <button class="back-btn" onclick="showSelector()">
+            Cambiar versión
+        </button>
+    </div>
+
+    <script src="head.js"></script>
+    <script src="cancelacion.js"></script>
+</body>
+</html>
